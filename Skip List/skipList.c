@@ -172,19 +172,19 @@ int main() {
                 break;
             case 2:
                 printf("Enter the key to delete :");
-                printf("%d", &data);
+                scanf("%d", &data);
                 skiplist_delete(&list, data);
                 break;
             case 3:
                 printf("Enter the key to be searched : ");
-                printf("%d", &data);
-                if( skiplist_search(&list, data) == null)
+                scanf("%d", &data);
+                if( skiplist_search(&list, data) == NULL)
                     printf("%d not found in the list", data);
                 else
                     printf("%d found in the list", data);
                 break;
             case 4:
-                skiplist_dump();
+                skiplist_dump(&list);
                 break;
             default:
                 printf("Invalid Selection");
@@ -192,14 +192,6 @@ int main() {
 
                 
 
+            }
         }
     }
-    }
- 
-    printf("Search:--------------------\n");
-    skiplist_delete(&list, 3);
-    skiplist_delete(&list, 9);
-    skiplist_dump(&list);
- 
-    return 0;
-}
